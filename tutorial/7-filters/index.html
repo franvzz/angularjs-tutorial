@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="mainModule">
+<head>
+  <meta charset="utf-8">
+  <title>Hola Controller</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <!-- from: https://github.com/grevory/angular-local-storage/ -->
+  <script src="angular-local-storage.min.js"></script>
+  <script src="controller.js"></script>
+</head>
+<body ng-controller="FiltersController">
+  <h3>{{ "Hola " + nombre }}</h3>
+  {{ mi_html | json }} <br>
+  <br>
+  {{ mi_html.title | removeHtml }}
+  {{ mi_html.body | removeHtml }} <br>
+  <br>
+  {{ costo | currency }} <br>
+  <br>
+  {{ costo | currency:'$' }} <br>
+  <br>
+  {{ costo | currency:'€' }} <br>
+  <br>
+  {{ costo | currency:'¥' }} <br>
+  <br>
+  {{ costo | currency:'¿...? ' }} <br>
+  <br>
+</body>
+</html>
