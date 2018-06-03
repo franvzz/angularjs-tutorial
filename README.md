@@ -1,2 +1,2 @@
-# angularjs-tutorial
+# ajs-tut
 # credits to: cf
