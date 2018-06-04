@@ -24,7 +24,7 @@ angular.module("FinalApp")
 
 })
 // .controller("PostController", function($scope, $resource, $routeParams){
-.controller("PostController", function($scope, PostResource, $routeParams){
+.controller("PostController", function($scope, PostResource, $routeParams, $location){
   // title on edit
   $scope.form_title = "Edit Post";
   // Post
@@ -39,11 +39,12 @@ angular.module("FinalApp")
       data: $scope.post
     }, function(data){
       console.log(data);
+      $location.path("/post/"+$scope.post.id);
     });
   }
 })
 // .controller("NewPostController", function($scope, $resource) {
-.controller("NewPostController", function($scope, PostResource) {
+.controller("NewPostController", function($scope, PostResource, $location) {
   // Post = $resource("http://jsonplaceholder.typicode.com/posts/:id", { id: "@id" });
   $scope.post = {};
   $scope.form_title = "New Post";
@@ -53,6 +54,7 @@ angular.module("FinalApp")
       data: $scope.post
     }, function(data){
       console.log(data);
+      $location.path("/");
     });
   }
 });
