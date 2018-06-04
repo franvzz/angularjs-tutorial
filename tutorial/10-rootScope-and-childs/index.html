@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- ng-app = load angularjs -->
+<html ng-app="MyFirstApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Hola Mundo con AngujarJS</title>
+    <!-- add angularjs to project-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <script src="controller.js"></script>
+  </head>
+  <body ng-controller="FirstController">
+    <h1>RootScope & ChildScope</h1>
+    Abue <input type="text" ng-model="$parent.name"> <br>
+    Hijo <input type="text" ng-model="name"> <br>
+    Nieto <input type="text" ng-model="$parent.$parent.name"> (Aquí no funciona valor de Nieto, porque esta fuera del ng-model="ChildController") <br> 
+    <br>
+    RootScope: {{ $parent.name }} <br>
+    Scope: {{ name }} <br>
+    <br>
+    <div ng-controller="ChildController">
+      ChildScope: {{ name }} <br>
+      Mi PadreScope: {{ $parent.name }} <br>
+      Mi AbueScope: {{ $parent.$parent.name }} <br>
+      <br>
+      Abue <input type="text" ng-model="$parent.name"> <br>
+      Hijo <input type="text" ng-model="name"> <br>
+      Nieto <input type="text" ng-model="$parent.$parent.name"> (Aquí funciona el valor de Nieto, porque está dentro de ng-model="ChildController") <br>
+      <br>
+    </div>
+  </body>
+</html>

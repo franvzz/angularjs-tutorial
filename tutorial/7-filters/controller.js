@@ -5,6 +5,7 @@ var app = angular.module("mainModule", [])
     }
   })
   .controller("FiltersController", function($scope){
+    $scope.nombre = "Javier";
     $scope.mi_html = {};
     $scope.mi_html.title = '<h3>Hola</h3>';
     $scope.mi_html.body = '<h3>Mundo!</h3>';

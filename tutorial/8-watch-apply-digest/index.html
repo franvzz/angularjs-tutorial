@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="mainModule">
+<head>
+  <meta charset="utf-8">
+  <title>Hola Controller</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <script src="controller.js"></script>
+</head>
+<body ng-controller="FiltersController">
+  <h1>{{ "Hola " + name }}</h1>
+  <button ng-click="name = 'Sr. J. Vazz - ng-click'">Click con ng-click</button>
+  <button id="button">Click con Apply</button>
+</body>
+</html>

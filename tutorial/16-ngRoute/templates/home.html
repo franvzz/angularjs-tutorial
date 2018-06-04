@@ -1,0 +1,20 @@
+<h3>Home</h3>
+
+<input type="text" class="form-control" my-autocomplete="repos" placeholder="Buscar Repositorio">
+<ul class="no-list list-group-flush" ng-cloak>
+  <li ng-repeat="repo in posts" ng-hide="main_repo && main_repo != repo.name" class="list-group-item">
+    <a href="#!/repo/{{ repo.name }}">
+      <div class="row">
+        <div class="col-2">
+          <div class="circle" img-circle="{{ repo.owner.avatar_url }}"></div>
+        </div>
+        <div class="col">
+          <h3>{{ repo.name }}</h3>
+          <label>ID:</label> {{ repo.id }} <br>
+          <label>Owner:</label> {{ repo.owner.login }} <br>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
+<button type="button" class="btn btn-outline-primary btn-lg" ng-click="main_repo = null">Reset</button>

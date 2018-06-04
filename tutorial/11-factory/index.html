@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="ToDoList">
+<head>
+  <meta charset="utf-8">
+  <title>Hola Controller</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <!-- from: https://github.com/grevory/angular-local-storage/ -->
+  <script src="angular-local-storage.min.js"></script>
+  <script src="controller.js"></script>
+</head>
+<body ng-controller="ToDoController">
+  <h1>Factories</h1>
+
+  <ul>
+    <li ng-repeat="actv in todo">
+      {{ actv.description }} -
+      <i>{{ actv.create | date: 'short' }}</i>
+      <a href="#" ng-click="removeActv(actv)" style="color:#c10;">Eliminar</a>
+    </li>
+  </ul>
+
+  <form ng-submit="addActv()">
+    <input type="text" ng-model="newActv.description" placeholder="Description"> <br>
+    <input type="datetime-local" ng-model="newActv.create" placeholder="Create"> <br>
+    <button type="submit">Save</button>
+  </form>
+  <!-- <button ng-click="cleanActivities()">Clean Data</button> -->
+  <button ng-click="clean()">Clean Data</button>
+
+</body>
+</html>

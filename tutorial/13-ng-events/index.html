@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- ng-app = load angularjs -->
+<html ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>AngujarJS - Ng Events & Ng Class</title>
+  <!-- add angularjs to project-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <style media="all">
+    .hover {
+      background: rgba(255, 50, 50, 0.5);
+    }
+    .no-hover {
+      background: rgba(100, 150, 150, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <h1>Ng Events & Ng Class</h1>
+
+  <button ng-mouseover="flag = true" ng-mouseout="flag = false">
+    Hover me!
+  </button>
+  <span ng-show="flag"> &laquo; click me! </span>
+
+  <hr>
+
+  <button ng-click="flag2 = !flag2">
+    Click me!
+  </button>
+  <span ng-show="flag2"> &raquo;  {{ flag2 | json }} </span>
+  <span ng-show="!flag2"> &raquo;  {{ flag2 | json }} </span>
+
+  <hr>
+
+  <button ng-click="flag3 = !flag3" ng-class="{ 'hover' : flag3, 'no-hover': !flag3 }">
+    Click me!
+  </button>
+  <span ng-show="flag3"> &laquo; Clicked! </span>
+
+  <hr>
+
+</body>
+</html>

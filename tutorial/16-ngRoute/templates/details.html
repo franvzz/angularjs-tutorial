@@ -1,0 +1,15 @@
+<h3>Details</h3>
+
+<a href="#!/">Home</a> <br>
+<br>
+
+<div class="row">
+  <div class="col-2">
+    <div class="circle" img-circle="{{ repo.owner.avatar_url }}"></div>
+  </div>
+  <div class="col">
+    <h3>{{ repo.name }}</h3>
+    <label>ID:</label> {{ repo.id }} <br>
+    <label>Owner:</label> {{ repo.owner.login }} <br>
+  </div>
+</div>

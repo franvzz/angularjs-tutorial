@@ -5,5 +5,5 @@ var app = angular.module("MyFirstApp", [
   $scope.nombre = "Javier";
 })
 .controller("SecondController", function($scope){
-  
+
 });

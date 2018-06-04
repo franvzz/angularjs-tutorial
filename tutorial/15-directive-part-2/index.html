@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- ng-app = load angularjs -->
+<html ng-app="CustomDirective">
+<head>
+  <meta charset="utf-8">
+  <title>AngujarJS - Directives - Part 2</title>
+  <!-- add bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <!-- style jquery -->
+  <link rel="stylesheet" href="autocomplete-jquery-ui.structure.css">
+  <!-- add angularjs to project-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <script src="autocomplete-jquery-ui.js"></script>
+  <script src="controller.js"></script>
+  <style media="all">
+    .ui-autocomplete { background:#f5f5f5; }
+    .circle {
+      border-radius: 50px;
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body ng-controller="AppCtrl">
+  <div class="container">
+    <h1>Directives - Part 2</h1>
+    <br>
+    <input type="text" class="form-control" my-autocomplete="repos" placeholder="Buscar Repositorio">
+    <ul class="no-list list-group-flush" ng-cloak>
+      <li ng-repeat="repo in posts" ng-hide="main_repo && main_repo != repo.name" class="list-group-item">
+        <div class="row">
+          <div class="col-2">
+            <div class="circle" img-circle="{{ repo.owner.avatar_url }}"></div>
+          </div>
+          <div class="col">
+            <h3>{{ repo.name }}</h3>
+            <label>ID:</label> {{ repo.id }} <br>
+            <label>Owner:</label> {{ repo.owner.login }} <br>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <button type="button" class="btn btn-outline-primary btn-lg" ng-click="main_repo = null">Reset</button>
+  </div>
+</body>
+</html>
